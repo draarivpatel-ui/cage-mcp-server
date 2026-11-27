@@ -20,6 +20,7 @@
   ],
   "scripts": {
     "test": "node --test",
+    "test:fuzz": "node --test test/fuzz.test.js",
     "smoke": "node scripts/smoke-mcp.mjs"
   },
   "keywords": [
@@ -55,5 +56,8 @@
     "logcage": "1.0.0",
     "corscage": "1.0.0",
     "jsoncage": "1.0.0"
+  },
+  "devDependencies": {
+    "fast-check": "4.10.3"
   }
 }

@@ -38,7 +38,7 @@ test('package dependencies are exactly the ten pinned live security packages', a
   for (const [name, version] of Object.entries(pkg.dependencies)) {
     assert.match(version, /^\d+\.\d+\.\d+$/, `${name} is not exactly pinned`);
   }
-  assert.deepEqual(pkg.devDependencies ?? {}, {});
+  assert.deepEqual(pkg.devDependencies, { 'fast-check': '4.10.3' });
   assert.equal(pkg.type, 'module');
   assert.equal(pkg.bin['cage-mcp-server'], 'bin/cage-mcp-server.mjs');
   assert.equal(pkg.engines.node, '>=18');

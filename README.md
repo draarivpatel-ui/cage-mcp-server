@@ -167,7 +167,7 @@ npm audit
 
 The test suite uses only `node:test`. It covers direct behavior for all ten tools, newline-delimited and `Content-Length` stdio sessions, malformed JSON, oversized frames, prototype pollution, unknown methods, invalid arguments and repository hygiene.
 
-Runtime dependencies are intentionally limited to the ten security packages. There are no other runtime or development npm dependencies.
+Runtime dependencies are intentionally limited to the ten security packages. `fast-check` is the only development dependency, used only by the property-based fuzz tests.
 
 ## Repository layout
 
