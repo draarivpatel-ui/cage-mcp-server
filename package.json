@@ -1,0 +1,48 @@
+{
+  "name": "cage-mcp-server",
+  "version": "1.0.0",
+  "description": "Offline AppSec firewall MCP server powered by the cage security packages",
+  "type": "module",
+  "main": "src/server.mjs",
+  "bin": {
+    "cage-mcp-server": "bin/cage-mcp-server.mjs"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "README.md",
+    "LICENSE",
+    "SECURITY.md",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "test": "node --test",
+    "smoke": "node scripts/smoke-mcp.mjs"
+  },
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "model-context-protocol",
+    "security",
+    "appsec",
+    "devsecops",
+    "firewall"
+  ],
+  "author": "draarivpatel-ui",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "sentinel-lint": "0.2.0",
+    "pathcage": "1.0.1",
+    "headersafe": "1.0.1",
+    "redirectcage": "1.0.0",
+    "envcage": "1.0.0",
+    "cookiecage": "1.0.0",
+    "zipcage": "1.0.0",
+    "logcage": "1.0.0",
+    "corscage": "1.0.0",
+    "jsoncage": "1.0.0"
+  }
+}
