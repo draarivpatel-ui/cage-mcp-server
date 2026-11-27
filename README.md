@@ -1,5 +1,7 @@
 # cage-mcp-server
 
+[![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/draarivpatel-ui/cage-mcp-server/badge)](https://securityscorecards.dev/viewer/?uri=github.com/draarivpatel-ui/cage-mcp-server)
+
 `cage-mcp-server` is an offline Model Context Protocol server that gives AI coding assistants deterministic application-security guardrails. It exposes ten bounded MCP tools backed directly by ten published npm security packages: `sentinel-lint`, `pathcage`, `headersafe`, `redirectcage`, `envcage`, `cookiecage`, `zipcage`, `logcage`, `corscage`, and `jsoncage`.
 
 The server speaks JSON-RPC 2.0 over stdio. It supports the newline-delimited framing used by MCP stdio clients and strict `Content-Length` framing for harnesses that use that transport style.
