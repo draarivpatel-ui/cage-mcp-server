@@ -1,0 +1,24 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.draarivpatel-ui/cage-mcp-server",
+  "description": "Offline AppSec firewall MCP server with deterministic security audit tools",
+  "title": "Cage Security",
+  "websiteUrl": "https://github.com/draarivpatel-ui/cage-mcp-server",
+  "repository": {
+    "url": "https://github.com/draarivpatel-ui/cage-mcp-server",
+    "source": "github",
+    "id": "1474695651"
+  },
+  "version": "1.0.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "cage-mcp-server",
+      "version": "1.0.0",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 {
   "name": "cage-mcp-server",
   "version": "1.0.0",
+  "mcpName": "io.github.draarivpatel-ui/cage-mcp-server",
   "description": "Offline AppSec firewall MCP server powered by the cage security packages",
   "type": "module",
   "main": "src/server.mjs",
@@ -10,6 +11,8 @@
   "files": [
     "bin/",
     "src/",
+    "server.json",
+    "glama.json",
     "README.md",
     "LICENSE",
     "SECURITY.md",
@@ -30,6 +33,14 @@
   ],
   "author": "draarivpatel-ui",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/draarivpatel-ui/cage-mcp-server.git"
+  },
+  "homepage": "https://github.com/draarivpatel-ui/cage-mcp-server#readme",
+  "bugs": {
+    "url": "https://github.com/draarivpatel-ui/cage-mcp-server/issues"
+  },
   "engines": {
     "node": ">=18"
   },

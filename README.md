@@ -148,6 +148,12 @@ The final response has a structured result similar to:
 }
 ```
 
+## Registry metadata
+
+`server.json` describes the package for the Official MCP Registry using schema `2025-12-11`. Its name matches the `mcpName` field in `package.json`, which is how the registry verifies npm package ownership.
+
+`glama.json` declares `draarivpatel-ui` as the GitHub maintainer for Glama ownership claims.
+
 ## Development
 
 ```sh
@@ -171,6 +177,8 @@ Runtime dependencies are intentionally limited to the ten security packages. The
 | `src/validation.mjs` | Bounded validation helpers and prototype-key rejection |
 | `test/` | Unit, integration, adversarial and hygiene tests |
 | `scripts/smoke-mcp.mjs` | Live stdio smoke test used by CI |
+| `server.json` | Official MCP Registry publishing metadata |
+| `glama.json` | Glama maintainer ownership metadata |
 
 ## License
 

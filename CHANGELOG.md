@@ -15,3 +15,5 @@ The format is based on Keep a Changelog, and this project adheres to Semantic Ve
 - Secret-minimizing output for dotenv and cookie audits.
 - End-to-end stdio tests, adversarial framing tests, tool tests and repository hygiene tests.
 - Ubuntu and Windows CI across Node.js 18, 20, 22 and 24.
+- Official MCP Registry metadata in `server.json` and npm ownership metadata in `package.json`.
+- Glama maintainer metadata in `glama.json`.
