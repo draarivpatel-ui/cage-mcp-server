@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import path from 'node:path';
 import test from 'node:test';
 
 import {
@@ -50,7 +51,7 @@ test('stdio server handles strict Content-Length framing and a live tool call', 
   const responses = parseContentLengthFrames(run.stdoutBuffer);
   assert.deepEqual(responses.map((message) => message.id), [1, 2]);
   assert.equal(responses[1].result.structuredContent.ok, true);
-  assert.equal(responses[1].result.structuredContent.resolvedPath, '/sandbox/safe/file.txt');
+  assert.equal(responses[1].result.structuredContent.resolvedPath, path.resolve('/sandbox', 'safe/file.txt'));
   assert.equal(responses[1].result.isError, false);
 });
 

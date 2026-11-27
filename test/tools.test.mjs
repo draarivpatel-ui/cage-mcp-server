@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import path from 'node:path';
 import test from 'node:test';
 
 import { buildSecurityHeaders } from 'headersafe';
@@ -32,7 +33,7 @@ test('audit_path accepts a benign path inside the root', async () => {
   const result = await callTool('audit_path', { path: 'assets/app.js', root: '/sandbox' });
   assert.equal(result.ok, true);
   assert.equal(result.safe, true);
-  assert.equal(result.resolvedPath, '/sandbox/assets/app.js');
+  assert.equal(result.resolvedPath, path.resolve('/sandbox', 'assets/app.js'));
 });
 
 test('audit_path reports traversal without throwing', async () => {
