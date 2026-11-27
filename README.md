@@ -161,13 +161,14 @@ The final response has a structured result similar to:
 ```sh
 npm ci
 npm test
+npm run test:fuzz
 npm run smoke
 npm audit
 ```
 
 The test suite uses only `node:test`. It covers direct behavior for all ten tools, newline-delimited and `Content-Length` stdio sessions, malformed JSON, oversized frames, prototype pollution, unknown methods, invalid arguments and repository hygiene.
 
-Runtime dependencies are intentionally limited to the ten security packages. `fast-check` is the only development dependency, used only by the property-based fuzz tests.
+Runtime dependencies are intentionally limited to the ten security packages. `fast-check` is the only development dependency, used only by the property-based fuzz tests. The fuzz suite uses seed 20261127 by default, and `FUZZ_SEED` can override it to replay a failure.
 
 ## Repository layout
 

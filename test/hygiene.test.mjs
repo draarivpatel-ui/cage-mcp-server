@@ -38,7 +38,18 @@ test('package dependencies are exactly the ten pinned live security packages', a
   for (const [name, version] of Object.entries(pkg.dependencies)) {
     assert.match(version, /^\d+\.\d+\.\d+$/, `${name} is not exactly pinned`);
   }
-  assert.deepEqual(pkg.devDependencies, { 'fast-check': '4.10.3' });
+  assert.equal(Object.hasOwn(pkg.dependencies, 'fast-check'), false);
+  assert.equal(Object.hasOwn(pkg.devDependencies, 'fast-check'), true);
+  const fastCheckSpec = pkg.devDependencies['fast-check'];
+  assert.match(
+    fastCheckSpec,
+    /^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?(?:\+[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?$/,
+    'fast-check must use an exact version, not a range',
+  );
+  const lock = JSON.parse(await fs.readFile(path.join(root, 'package-lock.json'), 'utf8'));
+  assert.equal(lock.packages[''].devDependencies['fast-check'], fastCheckSpec);
+  assert.equal(lock.packages['node_modules/fast-check'].version, fastCheckSpec);
+  assert.equal(lock.packages['node_modules/fast-check'].dev, true);
   assert.equal(pkg.type, 'module');
   assert.equal(pkg.bin['cage-mcp-server'], 'bin/cage-mcp-server.mjs');
   assert.equal(pkg.engines.node, '>=18');
